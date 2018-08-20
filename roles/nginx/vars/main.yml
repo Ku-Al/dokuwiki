@@ -1,5 +1,4 @@
 server_hostname: wiki.{{ ansible_host }}
 configuration_file: default.conf
 dest : wiki.conf
-nginx_web_dir: /var/www/wiki
 nginx_log: /var/log/nginx/logs

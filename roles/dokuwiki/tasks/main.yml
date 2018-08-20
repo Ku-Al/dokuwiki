@@ -1,0 +1,17 @@
+---
+ - name: Download latest stable dokuwiki tarball
+   get_url: url=http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz dest=/var/tmp/dokuwiki-stable.tgz
+
+ - name: Unpack tarball
+   command: tar -xvf dokuwiki-stable.tgz chdir=/var/tmp
+
+ - name: Prepare target directory
+   command: mkdir {{ web_dir }}/dokuwiki
+   
+ - name: Move dokuwiki
+   shell: mv /var/tmp/dokuwiki-stable/* {{ web_dir }}/dokuwiki/
+
+ - name: Fix permissions
+   shell: chown -R www-data {{ web_dir }}/dokuwiki/*
+
+   notify: restart nginx
