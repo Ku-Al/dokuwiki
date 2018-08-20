@@ -1,0 +1,11 @@
+
+---
+- name: Install Apache2, php7, DokuWiki and config firewall
+  hosts: debian
+  remote_user: root
+
+  roles:
+          #    - php 
+    - nginx
+      #    - docuwiki
+      #    - firewall
