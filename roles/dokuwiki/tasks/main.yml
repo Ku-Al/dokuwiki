@@ -9,9 +9,11 @@
    #command: mkdir {{ web_dir }}/dokuwiki
    
  - name: Move dokuwiki
-   shell: mv /var/tmp/dokuwiki-stable/* {{ web_dir }}/dokuwiki/
+   shell: mv /var/tmp/dokuwiki-*/* {{ web_dir }}
 
  - name: Fix permissions
-   shell: chown -R www-data {{ web_dir }}/dokuwiki/*
+   shell: chown -R {{ web_owner }} {{ web_dir }}/*
 
-   notify: restart nginx
+ - name: Restart nginx at boot
+   service: name=nginx state=restarted enabled=yes
+ 
