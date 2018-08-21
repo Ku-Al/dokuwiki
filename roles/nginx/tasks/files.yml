@@ -1,0 +1,9 @@
+---
+
+- file: 
+    path: '{{ web_dir }}' 
+    state: directory 
+    owner: '{{ web_owner }}'
+    group: '{{ web_group }}'
+    mode: 0755
+

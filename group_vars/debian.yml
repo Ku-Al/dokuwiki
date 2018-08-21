@@ -1,4 +1,4 @@
 ---
-php_owner: www-data
-php_group: www-data
-web_dir: /var/www/wiki
+web_owner: www-data
+web_group: www-data
+web_dir: /var/www/dokuwiki

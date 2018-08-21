@@ -1,4 +1,6 @@
 ---
+- include: files.yml
+
 - name: Install nginx
   apt: pkg=nginx state=present 
 
@@ -10,6 +12,7 @@
   #notify: 
   #  - restart nginx
   #
+
 - name: Restart nginx at boot
   service: name=nginx state=restarted enabled=yes
 
