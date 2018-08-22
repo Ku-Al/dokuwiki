@@ -7,5 +7,6 @@
     group: '{{ web_group }}'
     mode: 0755
 
-- name: remove default nginx configs
-  file: dest=/etc/nginx/sites-enabled/default state=absent
+- file: 
+    path: '/etc/nginx/sites-enabled/default'
+    state: absent
