@@ -4,13 +4,4 @@
 
   tasks:
 
-  - file:
-      path: '/root/.ssh'
-      state: directory
-
-  - file:
-      path: '/root/.ssh/authorized_keys'
-      state: touch
-  - name: Set authorized key taken from file
-    command: ssh-copy-id -i ~/.ssh/id_rsa.pub root@{{ ansible_host }}
-
+  - local_action: command ssh-copy-id -i ~/.ssh/id_rsa.pub root@{{ ansible_host }}
