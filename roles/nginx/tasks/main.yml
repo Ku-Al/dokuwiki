@@ -9,9 +9,6 @@
 
 - name: Copy nginx configuration
   template: src={{ configuration_file }} dest=/etc/nginx/sites-enabled/{{ dest }}
-  #notify: 
-  #  - restart nginx
-  #
 
 - name: Restart nginx at boot
   service: name=nginx state=restarted enabled=yes

@@ -5,7 +5,8 @@
   remote_user: root
 
   roles:
+    - ssh      
     - php 
     - nginx
     - dokuwiki
-      #    - firewall
+    - firewall

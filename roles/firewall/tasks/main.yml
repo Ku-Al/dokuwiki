@@ -1,0 +1,8 @@
+---
+
+- name: Copy iptables configuration
+  template: src={{ firewall_file }} dest=/etc/default/
+
+- name: restart iptables
+  command: iptables-restore /etc/default/{{ firewall_file }}
+

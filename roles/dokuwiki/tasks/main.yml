@@ -5,9 +5,6 @@
  - name: Unpack tarball
    command: tar -xvf dokuwiki-stable.tgz chdir=/var/tmp
 
-   # - name: Prepare target directory
-   #command: mkdir {{ web_dir }}/dokuwiki
-   
  - name: Move dokuwiki
    shell: mv /var/tmp/dokuwiki-*/* {{ web_dir }}
 
