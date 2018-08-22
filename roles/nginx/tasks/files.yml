@@ -8,4 +8,4 @@
     mode: 0755
 
 - name: remove default nginx configs
-  file: dest=/etc/nginx/sites-available/default state=absent
+  file: dest=/etc/nginx/sites-enabled/default state=absent

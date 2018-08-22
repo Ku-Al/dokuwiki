@@ -9,7 +9,7 @@
    shell: mv /var/tmp/dokuwiki-*/* {{ web_dir }}
 
  - name: Fix permissions
-   shell: chown -R {{ web_group }}:{{ web_owner }}
+   shell: chown -R {{ web_group }}:{{ web_owner }} {{ web_dir }}
 
  - name: Restart nginx at boot
    service: name=nginx state=restarted enabled=yes
